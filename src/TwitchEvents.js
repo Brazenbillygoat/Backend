@@ -106,6 +106,7 @@ module.exports = (TwitchClient, sockets, app) => {
 		const _ = [...sockets[channelName]].forEach(async s => await s.emit("chatmessage", messageObject));
     });
     
+    // currently doesn't work
     TwitchClient.on("hosted", async ( channel, username, viewers, autohost) => {
         if(autohost) return
 		const channelName = channel.slice(1).toLowerCase();
